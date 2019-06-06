@@ -28,14 +28,34 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-print(products)
+#print(products)
 # pprint(products)
 
 # TODO: write some Python code here to produce the desired output
 
 
+#print("")
+#print("----spacer")
+#print("")
+
+
+prodname = list(map(lambda x : x['name'], products))
+proddept = list(map(lambda x : x['department'], products))
+prodaisle = list(map(lambda x : x['aisle'], products))
+prodprice = list(map(lambda x : x['price'], products))
+# lambda code found 
+# https://stackoverflow.com/questions/16228248/how-can-i-get-list-of-values-from-dict
+
+print("---------------------")
+print("There are 20 Products")
+print("---------------------")
+
+product_count = 0
+while product_count < 20:
+    print("  +", prodname[product_count],"(",prodprice[product_count],")")
+    product_count = product_count + 1
+
+
 print("")
-print("spacer")
-print("")
-print(products["name"])
+print("---------------------")
 
