@@ -1,5 +1,7 @@
 #Erik's Groceries Project
 
+import operator
+
 
 # groceries.py
 
@@ -46,6 +48,7 @@ prodprice = list(map(lambda x : x['price'], products))
 # lambda code found 
 # https://stackoverflow.com/questions/16228248/how-can-i-get-list-of-values-from-dict
 
+print("")
 print("---------------------")
 print("There are 20 Products")
 print("---------------------")
@@ -59,3 +62,11 @@ while product_count < 20:
 print("")
 print("---------------------")
 
+
+
+# THIS IS WAY EASIER
+#print(products[3]['name'], products[3]['price'])
+
+sorted(products, key = operator.itemgetter('name'))
+# USERING OPERATOR ITEM GETTING
+print(products[0]['name'])
