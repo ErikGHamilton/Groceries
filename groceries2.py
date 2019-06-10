@@ -99,8 +99,7 @@ print("")
 
 
 
-#first_dept = products2[0]['department']
-#dept_list = [first_dept]
+
 #while prod_count < total_products:    #put in a variable here later that counts the number of products
 #    print(f"   + {products2[prod_count]['name']} (${products2[prod_count]['price']})")
 #       
@@ -108,3 +107,31 @@ print("")
 #
 #print("")
 #print("")
+
+dept_list = []
+for i in products:
+    if i['department'] not in dept_list:
+        dept_list.append(i["department"])
+
+numdepts = len(dept_list)
+
+print("")
+print("---------------------")
+
+print(f"There are {numdepts} Departments")
+print("---------------------")
+print("")
+
+sort_dept = sorted(dept_list)
+
+#FROM SCREENCAST
+
+for d in sort_dept:
+   matching_products = [p for p in products if p["department"] == d]
+   matching_products_count = len(matching_products)
+   if matching_products_count > 1:
+       label = "products"
+   else:
+       label = "product"
+   print(" +++ " + d.title() + " (" + str(matching_products_count) + " " + label + ")")
+print("")
